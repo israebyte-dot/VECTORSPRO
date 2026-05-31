@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import { ArrowRight, Image as ImageIcon, Monitor, Truck, FileImage, Zap, Check, Shirt, Scissors, FileText, Smartphone, Package, Layers, Tag } from 'lucide-react';
+import { ArrowRight, Image as ImageIcon, Monitor, Truck, FileImage, Zap, Check, Shirt, Scissors, FileText, Smartphone, Package, Layers, Tag, Clock } from 'lucide-react';
 
 // @ts-ignore
 import gearCompareImg from './assets/images/gear_vector_compare_1780232214771.png';
 // @ts-ignore
 import threeColorCompareImg from './assets/images/logo_three_color_compare_1780233907839.png';
 
-const GUMROAD_CHECKOUT_URL = "https://gumroad.com/checkout?_gl=1*iyxu3b*_ga*OTEzMjYwNTg1LjE3MzMwMDA0Mjg.*_ga_6LJN6D94N6*czE3ODAxNjIzNjUkbzY4JGcxJHQxNzgwMTY0MjU4JGo2MCRsMCRoMA..";
+const GUMROAD_CHECKOUT_URL = "https://digitalforbiz.gumroad.com/l/ProfessionalLogoVectorizationService";
 
 const Button = ({ children, href, className = "" }: { children: React.ReactNode; href: string; className?: string }) => (
   <a
     href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className={`inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 font-bold text-sm uppercase tracking-wider hover:bg-white hover:text-black border-2 border-black transition-all duration-200 ${className}`}
+    className={`gumroad-button inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 font-bold text-sm uppercase tracking-wider hover:bg-white hover:text-black border-2 border-black transition-all duration-200 ${className}`}
+    data-gumroad-overlay-checkout="true"
   >
     {children}
   </a>
@@ -65,8 +64,13 @@ const Hero = () => {
     <section className="bg-white border-b-2 border-black">
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col lg:flex-row items-center gap-16">
         <div className="lg:w-[45%] space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 border-2 border-black bg-gray-50 text-black text-xs font-bold uppercase tracking-widest">
-            <Zap size={14} className="text-black" /> Professional Service
+          <div className="flex flex-wrap gap-3">
+            <div className="inline-flex items-center gap-2 px-4 py-2 border-2 border-black bg-gray-50 text-black text-xs font-bold uppercase tracking-widest">
+              <Zap size={14} className="text-black" /> Professional Service
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 border-2 border-black bg-yellow-300 text-black text-xs font-black uppercase tracking-widest shadow-[2px_2px_0px_#000]">
+              <Clock size={14} className="text-black inline" /> Max 48H Delivery
+            </div>
           </div>
           <h1 className="text-5xl md:text-7xl font-black text-black leading-[0.95] tracking-tight uppercase">
             Turn Blurry Logos <br/> Into <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-black">Vectors.</span>
@@ -74,10 +78,16 @@ const Hero = () => {
           <p className="text-lg text-gray-600 leading-relaxed max-w-md border-l-4 border-black pl-6">
             Stop using pixelated, blurry PNGs. We manually trace your logos into high-quality, perfectly scalable SVG, EPS, and AI files. Crafted for any size, from tiny business cards to giant truck wraps.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button href={GUMROAD_CHECKOUT_URL} className="py-5 text-base">
-              Vectorize My Logo <ArrowRight size={20} />
-            </Button>
+          <div className="flex flex-col gap-3 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button href={GUMROAD_CHECKOUT_URL} className="py-5 text-base">
+                Vectorize My Logo <ArrowRight size={20} />
+              </Button>
+            </div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse inline-block"></span>
+              Speed Guarantee: Completed in maximum 48 hours
+            </p>
           </div>
         </div>
         
@@ -261,7 +271,7 @@ const HowItWorks = () => (
         {[
           { icon: <FileImage size={32} />, title: "01. Upload", desc: "Send us your low-quality PNG or JPG." },
           { icon: <ImageIcon size={32} />, title: "02. Vectorize", desc: "We manually trace it into SVG/EPS." },
-          { icon: <Check size={32} />, title: "03. Download", desc: "Get high-res files ready for print." }
+          { icon: <Check size={32} />, title: "03. Delivered ≤ 48H", desc: "Get high-res vector files ready for print in maximum 48 hours." }
         ].map((step, index) => (
           <div key={index} className="border-r-2 border-b-2 border-black p-12 flex flex-col items-center text-center bg-white hover:bg-gray-50 transition-colors">
             <div className="mb-6 text-black">
@@ -318,9 +328,8 @@ const CTASection = () => (
       </p>
       <a 
         href={GUMROAD_CHECKOUT_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 bg-white text-black px-12 py-6 font-black text-lg uppercase tracking-wider hover:bg-gray-200 transition-all border-2 border-white"
+        className="gumroad-button inline-flex items-center gap-2 bg-white text-black px-12 py-6 font-black text-lg uppercase tracking-wider hover:bg-gray-200 transition-all border-2 border-white"
+        data-gumroad-overlay-checkout="true"
       >
         Order Now <ArrowRight size={24} />
       </a>
