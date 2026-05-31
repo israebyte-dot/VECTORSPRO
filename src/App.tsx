@@ -3,8 +3,6 @@ import { ArrowRight, Image as ImageIcon, Monitor, Truck, FileImage, Zap, Check, 
 
 // @ts-ignore
 import gearCompareImg from './assets/images/gear_vector_compare_1780232214771.png';
-// @ts-ignore
-import threeColorCompareImg from './assets/images/logo_three_color_compare_1780233907839.png';
 
 const GUMROAD_CHECKOUT_URL = "https://digitalforbiz.gumroad.com/l/ProfessionalLogoVectorizationService";
 
@@ -62,18 +60,6 @@ const caseStudies = [
       { label: "Curves Reconstruction", value: "Hand-aligned Bezier Handles" },
       { label: "Final Vector Outputs", value: "SVG, EPS, High-Res PNG" }
     ]
-  },
-  {
-    id: 2,
-    label: "Case Study 02",
-    tabTitle: "PRO LOGO",
-    title: "Minimalist Geometric Emblem",
-    image: threeColorCompareImg,
-    specs: [
-      { label: "Vector Color Isolation", value: "3 Solid Tone Separation" },
-      { label: "Border Re-tracing", value: "Pixel-perfect Alignment" },
-      { label: "Geometric Definition", value: "Symmetrical Node Cleanup" }
-    ]
   }
 ];
 
@@ -120,23 +106,25 @@ const Hero = () => {
           <div className="bg-[#fcfcf9] border border-black p-4 md:p-6 rounded-none">
             <div className="flex border-b border-black pb-4 mb-4 md:mb-6 justify-between items-center flex-col sm:flex-row gap-4">
               <span className="font-mono text-[10px] md:text-xs uppercase text-black tracking-wider font-extrabold">
-                Interactive Tracing process:
+                Traced Vector Case Study:
               </span>
-              <div className="flex p-0.5 bg-neutral-200 border border-black rounded-none w-full sm:w-auto">
-                {caseStudies.map((study, idx) => (
-                  <button
-                    key={study.id}
-                    onClick={() => setActiveTab(idx)}
-                    className={`px-3 py-1.5 md:px-4 md:py-2 text-[10px] md:text-xs font-bold uppercase tracking-wider transition-all duration-200 rounded-none flex-1 text-center cursor-pointer ${
-                      activeTab === idx 
-                        ? 'bg-black text-white' 
-                        : 'text-neutral-600 hover:text-black hover:bg-white'
-                    }`}
-                  >
-                    {study.tabTitle}
-                  </button>
-                ))}
-              </div>
+              {caseStudies.length > 1 && (
+                <div className="flex p-0.5 bg-neutral-200 border border-black rounded-none w-full sm:w-auto">
+                  {caseStudies.map((study, idx) => (
+                    <button
+                      key={study.id}
+                      onClick={() => setActiveTab(idx)}
+                      className={`px-3 py-1.5 md:px-4 md:py-2 text-[10px] md:text-xs font-bold uppercase tracking-wider transition-all duration-200 rounded-none flex-1 text-center cursor-pointer ${
+                        activeTab === idx 
+                          ? 'bg-black text-white' 
+                          : 'text-neutral-600 hover:text-black hover:bg-white'
+                      }`}
+                    >
+                      {study.tabTitle}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className="space-y-6">
