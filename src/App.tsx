@@ -205,24 +205,14 @@ const LargeFormatShowcase = () => {
     <section className="bg-gray-50 border-b-2 border-black">
       <div className="max-w-7xl mx-auto px-6 py-24">
         {/* Title / Info Header */}
-        <div className="grid lg:grid-cols-3 gap-8 items-center border-b-2 border-black pb-12 mb-16">
-          <div className="lg:col-span-2 space-y-4">
+        <div className="border-b-2 border-black pb-12 mb-16">
+          <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-black text-black leading-none uppercase">
               Why Vector?
             </h2>
             <p className="text-lg text-gray-800 font-medium leading-relaxed max-w-2xl">
               Raster images (JPG, PNG) break apart and pixelate when zoomed or printed physically. Vector files are mathematically perfect at any size.
             </p>
-          </div>
-          <div className="relative bg-white border-2 border-black p-2 h-full flex items-center justify-center">
-            <img 
-              src="https://images.unsplash.com/photo-1605218427306-635ba243971c?auto=format&fit=crop&w=800&q=80" 
-              alt="Logo printed on a delivery truck" 
-              className="w-full h-auto object-cover max-h-[160px] grayscale contrast-125"
-            />
-            <div className="absolute bottom-4 right-4 bg-black text-white px-3 py-1.5 font-bold uppercase text-[10px] tracking-widest">
-              Real World Application
-            </div>
           </div>
         </div>
 
